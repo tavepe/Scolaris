@@ -1,0 +1,27 @@
+.cabecalhos{
+    
+    background-color: #ffc107;
+    color: #000000;
+    font-size:20px ;
+}
+.botaoIndex{
+    font-size: 23px;
+}
+.topos {
+    text-align: center;
+    font-size: 30px;
+    background-color: #ffc107;
+    color: #000000;
+}
+.teste{
+    padding-bottom: 0;
+}
+
+#botaoDuvida{
+    font-size: 23px;
+}
+#botaoContinuar{
+    font-size: 23px;
+    color:#000000;
+    background-color: #ffc107;
+}
