@@ -1,0 +1,141 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Criar turma</title>
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="cabecalhos navbar navbar-expand-sm">
+
+        <div class="container">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <h1>Scolaris</h1>
+                </li>
+                <li class="nav-item m-2 mt-1">
+                    <a class="nav-link" href="#">Turmas</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="topos card-header">
+                        <h1>Criar turma</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <table class="table" id="tableTodosAlunos">
+                                    <tr>
+                                        <th>Todos os alunos</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <td>Alfreds Futterkiste</td>
+                                        <td><button class="botaoEditar"><img src="../static/images/add.png"></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alfreds Futterkiste</td>
+                                        <td><button class="botaoEditar"><img src="../static/images/add.png"></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alfreds Futterkiste</td>
+                                        <td><button class="botaoEditar"><img src="../static/images/add.png"></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alfreds Futterkiste</td>
+                                        <td><button class="botaoEditar"><img src="../static/images/add.png"></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table class="table" id="tableTodosAlunos">
+                                    <tr>
+                                        <th>Alunos na turma</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <td>Alfreds Futterkiste</td>
+                                        <td><button class="botaoApagar"><img src="../static/images/trash.png"></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alfreds Futterkiste</td>
+                                        <td><button class="botaoApagar"><img src="../static/images/trash.png"></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alfreds Futterkiste</td>
+                                        <td><button class="botaoApagar"><img src="../static/images/trash.png"></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alfreds Futterkiste</td>
+                                        <td><button class="botaoApagar"><img src="../static/images/trash.png"></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alfreds Futterkiste</td>
+                                        <td><button class="botaoApagar"><img src="../static/images/trash.png"></button>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <div class="row m-1">
+                                <div class="col-6">
+                                    <label for="nomeTurma">Nome da turma</label>
+                                    <input type="text" id="nomeTurma" class="form-control">
+                                </div>
+                                <div class="col-6">
+                                    <label for="selectProfessor">Professor</label>
+                                    <select id="selectProfessor" class="form-select">
+                                        <option>teste</option>
+                                        <option>teste</option>
+                                        <option>teste</option>
+                                        <option>teste</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="row justify-content-center m-1">
+                                <label for="descricao">Descrição</label>
+                                <textarea id="descricao" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-10"></div>
+                            <div class="col-2"><button class="btn btn-success btn-block">Salvar</button></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
