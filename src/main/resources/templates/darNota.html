@@ -1,0 +1,122 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Avaliar</title>
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="cabecalhos navbar navbar-expand-sm">
+
+        <div class="container">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <h1>Scolaris</h1>
+                </li>
+                <li class="nav-item m-2 mt-1">
+                    <a class="nav-link" href="#">Turmas</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+
+    <div class="container mt-5">
+        <div>
+            <h1><b>Avaliação:</b>*nome da avaliação*</h1>
+            <h2><b>Descrição:</b>*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi convallis placerat
+                porttitor. Ut
+                efficitur lobortis est, id fringilla turpis maximus eget. Praesent mollis, turpis eget ultricies
+                posuere,
+                magna augue aliquam neque, ac porta nunc neque non nibh. Aenean vitae faucibus lorem, eu ornare lectus.
+                Nullam ultrices metus risus, et ultricies lacus finibus a. Nullam finibus tellus vitae tortor suscipit,
+                eu
+                tincidunt libero bibendum. Sed finibus, turpis eu rhoncus varius, quam arcu elementum leo, non rhoncus
+                neque
+                sem non neque. Proin congue urna varius nulla dignissim, sit amet tincidunt magna dictum. Mauris dictum
+                sit
+                amet dui non laoreet. Nam nisl augue, ornare eu*</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div>
+                    <table class="table m-2" id="tableNotas">
+                        <tr>
+                            <th>Aluno</th>
+                            <th>Nota</th>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>6
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>X
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>3
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>5
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card m-2 mt-5 mb-5">
+                    <div class="topos card-header">
+                        <h1>Avaliar</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">                           
+                            <div class="row m-1">
+                                <div class="col-6">
+                                    <label for="selectProfessor">Aluno</label>
+                                    <select id="selectProfessor" class="form-select">
+                                        <option>teste</option>
+                                        <option>teste</option>
+                                        <option>teste</option>
+                                        <option>teste</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <label for="nomeTurma">Nota</label>
+                                    <input type="number" id="nomeTurma" class="form-control">
+                                </div>
+                                
+
+                            </div>
+                            <div class="row justify-content-center m-1">
+                                <label for="descricao">Recado</label>
+                                <textarea id="descricao" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-10"></div>
+                            <div class="col-2"><button class="btn btn-success btn-block">Salvar</button></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
