@@ -1,56 +1,70 @@
-.cabecalhos{
-    
+.cabecalhos {
+
     background-color: #ffc107;
     color: #000000;
-    font-size:20px ;
+    font-size: 20px;
 }
-.botaoIndex{
+
+.botaoIndex {
     font-size: 23px;
 }
+
 .topos {
     text-align: center;
     font-size: 30px;
     background-color: #ffc107;
     color: #000000;
 }
-.botaoApagar{
+
+.botaoApagar {
+    cursor: pointer;
+    margin-left: 3px;
     border: 0;
     background-color: red;
     border-radius: 5px;
     padding: 5px;
 }
-.botaoEditar{
+
+.botaoEditar {
+    margin-left: 3px;
     border: 0;
     background-color: green;
     border-radius: 5px;
     padding: 5px;
 }
-.botaoVizualizar{
+
+.botaoVizualizar {
+    cursor: pointer;
+    margin-left: 3px;
     border: 0;
     background-color: rgb(63, 63, 224);
     border-radius: 5px;
     padding: 5px;
 }
-.botaoApagar img{
-    width: 22px;
-}
-.botaoEditar img{
-    width: 22px;
-}
-.botaoVizualizar img{
+
+.botaoApagar img {
     width: 22px;
 }
 
+.botaoEditar img {
+    width: 22px;
+}
+
+.botaoVizualizar img {
+    width: 22px;
+}
 
 
 
 
 
-#botaoDuvida{
+
+#botaoDuvida {
     font-size: 23px;
 }
-#botaoContinuar{
+
+#botaoContinuar {
     font-size: 23px;
-    color:#000000;
+    color: #000000;
     background-color: #ffc107;
 }
