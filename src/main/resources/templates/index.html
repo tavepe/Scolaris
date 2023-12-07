@@ -1,11 +1,11 @@
-<html lang="pt-br">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Tela de Login</title>
-    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet">
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/styla.css}" rel="stylesheet">
 
 </head>
 
@@ -36,26 +36,29 @@
                     </div>
 
                     <div class="card-body">
-                        <form>
+                        <form th:action="@{/}" th:object="${user}" method="POST">
                             <div class="form-group">
                                 <label for="username">Usuário:</label>
-                                <input type="text" class="form-control" id="username" placeholder="Digite seu usuário">
+                                <input type="text" class="form-control" th:field="*{usuario}" name="usuario" id="username" placeholder="Digite seu usuário"
+                                    required>
                             </div>
 
                             <div class="form-group">
                                 <label for="password">Senha:</label>
-                                <input type="password" class="form-control" id="password"
-                                    placeholder="Digite sua senha">
+                                <input type="password" class="form-control" th:field="*{senha}" name="senha" id="password" placeholder="Digite sua senha"
+                                    required>
                             </div>
                             <div class="row">
-                                <button class="btn btn-primary btn-block mt-3 m-3 col-1" id="botaoDuvida">?</button>
+                                <button class="btn btn-primary btn-block mt-3 m-3 col-1" id="botaoDuvida" type="button"
+                                    data-bs-toggle="modal" data-bs-target="#duvidaModal">?</button>
                                 <div class="col-7"></div>
                                 <div class="col-3">
-                                    <button class="btn btn-primary btn-block mt-3 m-3" id="botaoContinuar">Continuar</button>
+                                    <button class="btn btn-primary btn-block mt-3 m-3" type="submit"
+                                        id="botaoContinuar">Continuar</button>
                                 </div>
                             </div>
-                            
-                            
+
+
                         </form>
                     </div>
                 </div>
@@ -63,8 +66,32 @@
             </div>
         </div>
     </div>
+    <div class="modal" id="duvidaModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Primeiro acesso</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Caso seja seu primeiro acesso ao sistema, como diretor, você deverá usar o usuário "admin" e a senha
+                    "admin".
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
 </body>
 
 </html>

@@ -41,32 +41,20 @@
                 <form id="formUser">
                     <div class="card">
                         <div class="topos card-header">
-                            <h1>Criar Usuário</h1>
+                            <h1>Editar Usuário</h1>
                         </div>
 
                         <div class="card-body">
                             <label for="nome">Nome</label>
-                            <input type="text" class="form-control" id="nome" required>
+                            <input type="text" class="form-control" id="nome" th:value="${user.nome}" required>
 
                             <label for="user">Usuário</label>
-                            <input type="text" class="form-control" id="usuario" required>
+                            <input type="text" class="form-control" id="usuario" th:value="${user.usuario}" required>
 
                             <label for="senha">Senha</label>
                             <input type="password" class="form-control" id="senha" required>
-                            <div class="row m-2">
-                                <div class="form-check col-9">
-                                    <input type="radio" name="tipoUser" id="professor" class="form-check-input"
-                                        value="professor" required>
-                                    <label for="professor">Professor</label>
-                                </div>
-                                <div class="form-check col-2">
-                                    <input type="radio" name="tipoUser" class="form-check-input" id="aluno"
-                                        value="aluno">
-                                    <label for="aluno">Aluno</label>
-                                </div>
-
-
-                            </div>
+                            <input type="hidden" id="userId" th:value="${user.id}">
+                            <input type="hidden" id="userTipo" th:value="${user.tipo}">
 
                         </div>
                         <div class="card-footer">
@@ -84,7 +72,7 @@
 
     <script th:src="@{/js/jquery.js}"></script>
     <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
-    <script th:src="@{/js/criaUser.js}"></script>
+    <script th:src="@{/js/editarUser.js}"></script>
 </body>
 
 </html>

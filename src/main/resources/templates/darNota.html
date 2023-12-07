@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Avaliar</title>
-    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet">
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/styla.css}" rel="stylesheet">
 
 </head>
 
@@ -19,7 +19,10 @@
                     <h1>Scolaris</h1>
                 </li>
                 <li class="nav-item m-2 mt-1">
-                    <a class="nav-link" href="#">Turmas</a>
+                    <a class="nav-link" th:href="@{|/turmasProfessor/${professor}|}">Turmas</a>
+                </li>
+                <li class="nav-item m-2 mt-1">
+                    <a class="nav-link btn btn-danger" th:href="@{/}">Sair</a>
                 </li>
             </ul>
 
@@ -31,92 +34,72 @@
 
     <div class="container mt-5">
         <div>
-            <h1><b>Avaliação:</b>*nome da avaliação*</h1>
-            <h2><b>Descrição:</b>*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi convallis placerat
-                porttitor. Ut
-                efficitur lobortis est, id fringilla turpis maximus eget. Praesent mollis, turpis eget ultricies
-                posuere,
-                magna augue aliquam neque, ac porta nunc neque non nibh. Aenean vitae faucibus lorem, eu ornare lectus.
-                Nullam ultrices metus risus, et ultricies lacus finibus a. Nullam finibus tellus vitae tortor suscipit,
-                eu
-                tincidunt libero bibendum. Sed finibus, turpis eu rhoncus varius, quam arcu elementum leo, non rhoncus
-                neque
-                sem non neque. Proin congue urna varius nulla dignissim, sit amet tincidunt magna dictum. Mauris dictum
-                sit
-                amet dui non laoreet. Nam nisl augue, ornare eu*</h2>
+            <h1><b>Título:</b></h1>
+            <h1 id="tituloAval"></h1>
+            <h2><b>Valor total:</b></h2>
+            <h2 id="valorAval"></h2>
+            <h3><b>Descrição:</b></h3>
+            <h3 id="descricaoAval"></h3>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div>
-                    <table class="table m-2" id="tableNotas">
-                        <tr>
-                            <th>Aluno</th>
-                            <th>Nota</th>
-                        </tr>
-                        <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>6
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>X
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>3
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>5
-                            </td>
-                        </tr>
+                    <table class="table table-bordered m-2" id="tableNotas">
+                        <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>Nota</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
                     </table>
                 </div>
-                <div class="card m-2 mt-5 mb-5">
-                    <div class="topos card-header">
-                        <h1>Avaliar</h1>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">                           
-                            <div class="row m-1">
-                                <div class="col-6">
-                                    <label for="selectProfessor">Aluno</label>
-                                    <select id="selectProfessor" class="form-select">
-                                        <option>teste</option>
-                                        <option>teste</option>
-                                        <option>teste</option>
-                                        <option>teste</option>
-                                    </select>
-                                </div>
-                                <div class="col-6">
-                                    <label for="nomeTurma">Nota</label>
-                                    <input type="number" id="nomeTurma" class="form-control">
-                                </div>
-                                
+                <form id="formNota">
+                    <div class="card m-2 mt-5 mb-5">
+                        <div class="topos card-header">
+                            <h1>Avaliar</h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="row m-1">
+                                    <div class="col-6">
+                                        <label for="selectAluno">Aluno</label>
+                                        <select id="selectAluno" class="form-select">
 
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="nomeTurma">Nota</label>
+                                        <input type="number" id="nota" class="form-control" required>
+                                    </div>
+
+
+                                </div>
+                                <div class="row justify-content-center m-1">
+                                    <label for="descricao">Recado</label>
+                                    <textarea id="recado" class="form-control" required></textarea>
+                                </div>
                             </div>
-                            <div class="row justify-content-center m-1">
-                                <label for="descricao">Recado</label>
-                                <textarea id="descricao" class="form-control"></textarea>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-10"></div>
+                                <div class="col-2"><button class="btn btn-success btn-block">Salvar</button></div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="row">
-                            <div class="col-10"></div>
-                            <div class="col-2"><button class="btn btn-success btn-block">Salvar</button></div>
-
-                        </div>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
+    <input type="hidden" id="turmaId" th:value="${turma}">
+    <input type="hidden" id="profId" th:value="${professor}">
+    <input type="hidden" id="avalId" th:value="${avaliacao}">
 
-    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/darNotas.js}"></script>
 </body>
 
 </html>

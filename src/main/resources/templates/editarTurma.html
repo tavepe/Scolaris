@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Criar turma</title>
+    <title>Editar turma</title>
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
     <link th:href="@{/css/styla.css}" rel="stylesheet">
 
@@ -43,7 +43,7 @@
                     <div class="card">
 
                         <div class="topos card-header">
-                            <h1>Criar turma</h1>
+                            <h1>Editar turma</h1>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -72,20 +72,20 @@
                                 </div>
 
                                 <div class="row m-1">
-
+                                    <input type="hidden" id="turmaId" th:value="${turma.id}">
                                     <div class="col-6">
                                         <label for="nomeTurma">Nome da turma</label>
-                                        <input type="text" id="nomeTurma" class="form-control" required>
+                                        <input type="text" id="nomeTurma" class="form-control" th:value="${turma.titulo}" required>
                                     </div>
                                     <div class="col-6">
                                         <label for="selectProfessor">Professor</label>
-                                        <select id="divSelectProfessor"></select>
+                                        <div id="divSelectProfessor"></div>
                                     </div>
 
                                 </div>
                                 <div class="row justify-content-center m-1">
                                     <label for="descricao">Descrição</label>
-                                    <textarea id="descricao" class="form-control" required></textarea>
+                                    <textarea id="descricao" class="form-control" th:text="${turma.descricao}" required></textarea>
                                 </div>
 
                             </div>
@@ -109,7 +109,7 @@
 
     <script th:src="@{/js/jquery.js}"></script>
     <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
-    <script th:src="@{/js/criarTurmas.js}"></script>
+    <script th:src="@{/js/editarTurma.js}"></script>
 </body>
 
 </html>
