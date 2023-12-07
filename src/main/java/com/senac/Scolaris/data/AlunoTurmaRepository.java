@@ -4,6 +4,7 @@
  */
 package com.senac.Scolaris.data;
 
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Repository;
  * @author tavep
  */
 @Repository
-public interface AlunoTurmaRepository extends JpaRepository<AlunoTurmaEntity,Integer>{
-    
+public interface AlunoTurmaRepository extends JpaRepository<AlunoTurmaEntity, Integer> {
+
+    List<AlunoTurmaEntity> findByTurmaId(int turma);
+    List<AlunoTurmaEntity> findByAlunoId(int aluno);
 }

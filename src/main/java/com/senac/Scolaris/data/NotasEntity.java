@@ -24,7 +24,7 @@ public class NotasEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Integer alunoId;
-    private String professorId;
-    private String nota;
+    private Integer avalId;
+    private Integer nota;
     private String recado;
 }
