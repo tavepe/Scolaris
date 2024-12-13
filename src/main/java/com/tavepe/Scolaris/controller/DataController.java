@@ -44,61 +44,61 @@ public class DataController {
         this.gradeService = gradeService;
     }
 
-    @GetMapping("/listClasses")
+    @GetMapping("/classes")
     public ResponseEntity<List<ClassDTO>> getAllClasses() {
         List<ClassDTO> classesDTO = classService.listAllClassesDTO();
         return new ResponseEntity<>(classesDTO, HttpStatus.OK);
     }
 
-    @GetMapping("/getClass/{id}")
+    @GetMapping("/classes/{id}")
     public ResponseEntity<ClassDTO> getClass(@PathVariable Integer id) {
         ClassDTO classDTO=classService.getCLassDTOById(id);
         return new ResponseEntity<>(classDTO, HttpStatus.OK);
     }
 
-    @GetMapping("/getUser/{id}")
+    @GetMapping("/users/{id}")
     public ResponseEntity<UserDTO> getUser(@PathVariable Integer id) {
         UserDTO user = userService.getUserDTOById(id);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @GetMapping("/getGradeByStudent/{studentId}/{testId}")
+    @GetMapping("/grades/student/{studentId}/test/{testId}")
     public ResponseEntity<GradeDTO> getGrade(@PathVariable Integer studentId, @PathVariable Integer testId) {
         GradeDTO grade = gradeService.getGradeDTOByStudent(studentId, testId);
         return new ResponseEntity<>(grade, HttpStatus.OK);
     }
 
-    @GetMapping("/getTest/{id}")
+    @GetMapping("/tests/{id}")
     public ResponseEntity<TestDTO> getTest(@PathVariable Integer id) {
         TestDTO test = testService.getTestDTOById(id);
         return new ResponseEntity<>(test, HttpStatus.OK);
     }
 
-    @GetMapping("/listUsers")
+    @GetMapping("/users")
     public ResponseEntity<List<UserDTO>> getAllUsers() {
         List<UserDTO> users = userService.listAllUsersDTO();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-    @GetMapping("listTestsByClass/{id}")
+    @GetMapping("/classes/{id}/tests")
     public ResponseEntity<List<TestDTO>> getTestsByClass(@PathVariable Integer id) {
         List<TestDTO> tests = testService.findAllTestsDTOByClass(id);
         return new ResponseEntity<>(tests, HttpStatus.OK);
     }
 
-    @GetMapping("/listStudents")
+    @GetMapping("/students")
     public ResponseEntity<List<UserDTO>> getAllStudents() {
         List<UserDTO> students = userService.getUsersDTOByType("student");
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
-    @GetMapping("/listTeachers")
+    @GetMapping("/teachers")
     public ResponseEntity<List<UserDTO>> getAllTeachers() {
         List<UserDTO> teachers = userService.getUsersDTOByType("teacher");
         return new ResponseEntity<>(teachers, HttpStatus.OK);
     }
 
-    @GetMapping("/getClassesByTeacher/{id}")
+    @GetMapping("/data/teachers/{id}/classes")
     public ResponseEntity<List<ClassDTO>> getClassesByTeacher(@PathVariable Integer id) {
 
         List<ClassDTO> classes = classService.getAllClassesDTOByTeacher(id);
@@ -106,7 +106,7 @@ public class DataController {
         return new ResponseEntity<>(classes, HttpStatus.OK);
     }
 
-    @PostMapping("/createGrade")
+    @PostMapping("/grades")
     public ResponseEntity<GradeDTO> createGrade(@RequestBody CreateGradeDTO gradeRequest) {
         GradeEntity gradeEntity = new GradeEntity();
         gradeEntity.setGrade(gradeRequest.getGrade());
@@ -118,7 +118,7 @@ public class DataController {
         return new ResponseEntity<>(responseGradeDTO, HttpStatus.CREATED);
     }
 
-    @PostMapping("/createTest")
+    @PostMapping("/tests")
     public ResponseEntity<TestDTO> createTest(@RequestBody CreateTestDTO testRequest) {
         TestEntity testEntity = new TestEntity();
         testEntity.setTestTitle(testRequest.getTestTitle());
@@ -130,7 +130,7 @@ public class DataController {
         return new ResponseEntity<>(responseTestDTO, HttpStatus.CREATED);
     }
 
-    @PostMapping("/createClass")
+    @PostMapping("/classes")
     public ResponseEntity<ClassDTO> createClass(@RequestBody CreateClassDTO classRequest) {
         ClassEntity classEntity = new ClassEntity();
         classEntity.setTitle(classRequest.getTitle());
@@ -142,7 +142,7 @@ public class DataController {
         return new ResponseEntity<>(responseClassDTO, HttpStatus.CREATED);
     }
 
-    @PostMapping("/createUser")
+    @PostMapping("/users")
     public ResponseEntity<UserDTO> createUser(@RequestBody CreateUserDTO userDTO) {
         UserEntity user = new UserEntity();
         user.setUser(userDTO.getUser());
@@ -154,7 +154,7 @@ public class DataController {
         return new ResponseEntity<>(responseUserDTO, HttpStatus.CREATED);
     }
 
-    @PutMapping("/updateUser/{id}")
+    @PutMapping("/users/{id}")
     public ResponseEntity<UserDTO> updateUser(@PathVariable Integer id, @RequestBody CreateUserDTO userDTO) {
         UserEntity user = new UserEntity();
         user.setUser(userDTO.getUser());
@@ -165,7 +165,7 @@ public class DataController {
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 
-    @PutMapping("/updateClass/{id}")
+    @PutMapping("/classes/{id}")
     public ResponseEntity<ClassDTO> updateClass(@PathVariable Integer id, @RequestBody CreateClassDTO classDTO) {
         ClassEntity classEntity = new ClassEntity();
         classEntity.setTitle(classDTO.getTitle());
@@ -177,13 +177,13 @@ public class DataController {
     }
 
 
-    @DeleteMapping("/deleteUser/{id}")
+    @DeleteMapping("/users/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
         userService.deleteUser(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping("deleteClass/{id}")
+    @DeleteMapping("/classes/{id}")
     public ResponseEntity<Void> deleteClass(@PathVariable Integer id) {
         classService.deleteClass(id);
         return new ResponseEntity<>(HttpStatus.OK);

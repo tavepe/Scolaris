@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.tavepe</groupId>
 	<artifactId>Scolaris</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>Scolaris</name>
 	<description>Scolaris é um sistema de gerenciamento escolar, permitindo melhor contato entre os professores e alunos de uma instituição</description>
 	<url/>
